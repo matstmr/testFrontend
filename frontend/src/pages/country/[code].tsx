@@ -2,6 +2,8 @@ import { Country } from "@/types/country.type";
 import { gql, useLazyQuery, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import styles from "@/styles/Country.module.css";
+
 
 const GET_ONE_COUNTRY = gql`
     query Countries($code: String!) {
@@ -40,10 +42,10 @@ export default function OneCountryPage() {
       }, [code])
 
     return (
-        <div>
-            <p>{oneCountry?.emoji}</p>
-            <p>Name : {oneCountry?.name} ({oneCountry?.code})</p>
-            {oneCountry?.continent ? <p>Continent : {oneCountry.continent.name}</p> : ''}
+        <div className={styles.container}>
+            <h2 className={styles.emoji}>{oneCountry?.emoji}</h2>
+            <p className={styles.name}>Name : {oneCountry?.name} ({oneCountry?.code})</p>
+            {oneCountry?.continent ? <p className={styles.continent}>Continent : {oneCountry.continent.name}</p> : <p className={styles.continent}>Continent non renseigné !</p>}
         </div>
     )
 }

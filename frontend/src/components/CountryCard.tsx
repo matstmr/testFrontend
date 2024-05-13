@@ -1,4 +1,4 @@
-import styles from "@/styles/Country.module.css";
+import styles from "@/styles/CountryCard.module.css";
 
 export default function CountryCard({ name, emoji, code, link }: { name: string, emoji: string, code: string, link: string }) {
     return (

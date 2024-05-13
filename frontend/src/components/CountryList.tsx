@@ -51,6 +51,10 @@ export default function CountryList() {
         const formDataJson = Object.fromEntries(formData.entries());
         console.log(formDataJson);
 
+        if (!formDataJson.name || !formDataJson.emoji || !formDataJson.code) {
+            throw new Error("Les champs ne sont pas correctement remplis !")
+        }
+
         addCountry({
             variables: {
                 data: {
@@ -71,20 +75,20 @@ export default function CountryList() {
     return (
         <>
             <div>
-                <form onSubmit={submit}>
-                    <label>
+                <form onSubmit={submit} className={styles.form}>
+                    <label className={styles.label}>
                         Name
-                        <input type="text" name="name"/>
+                        <input type="text" name="name" className={styles.input}/>
                     </label>
-                    <label>
+                    <label className={styles.label}>
                         Emoji
-                        <input type="text" name="emoji"/>
+                        <input type="text" name="emoji" className={styles.input}/>
                     </label>
-                    <label>
+                    <label className={styles.label}>
                         Code
-                        <input type="text" name="code"/>
+                        <input type="text" name="code" className={styles.input}/>
                     </label>
-                    <button>Add</button>
+                    <button className={styles.button}>Add</button>
                 </form>
             </div>
             <section className={styles.listCountries}>
