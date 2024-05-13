@@ -1,0 +1,23 @@
+.country {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ccc; /* Exemple de bordure */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ombre pour donner du relief */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: white; /* Fond blanc */
+    width: 100px; /* Largeur fixe pour la consistance */
+    height: 100px;
+    margin: 10px; /* Espacement autour des cartes */
+}
+
+.emoji {
+}
+
+.name {
+    color: #333; /* Couleur du texte */
+    font-weight: bold; /* Texte en gras */
+    margin-bottom: -10px;
+}
